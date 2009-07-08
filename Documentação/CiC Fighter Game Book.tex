@@ -1,0 +1,160 @@
+\documentclass[pdftex,12pt,a4paper]{article}
+
+\usepackage[pdftex]{graphicx}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+\usepackage[brazilian]{babel}
+\usepackage[latin1]{inputenc} %<--se estiver usando windows, descomente essa linha e comente a abaixo-->
+%\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\pagestyle{plain}
+\graphicspath{{./img/}}
+
+\begin{document}
+
+\begin{titlepage}
+ 
+\begin{center}
+ 
+    % Upper part of the page
+    \includegraphics[width=0.2\textwidth]{./unb_logo}\\[1cm]
+     
+    \textsc{\bf \LARGE Universidade de Brasília}\\
+    \textsc{\small Instituto de Ciências Exatas}\\
+    \textsc{\small Departamento de Ciência da Computa\c cão}\\[1.5cm]
+
+    \textsc{\bf \Large Constru\c cão de Pe\c cas Multimídia}\\
+    \textsc{\footnotesize 01/2009}\\
+    \textsc{\normalsize Professora Carla Denise Castanho}\\[0.5cm]
+     
+    \vfill
+    % Title
+    \textsc{\textbf{\LARGE CiC Fighter}}\\
+    \textsc{\normalsize Game Book}
+    \vfill%
+        \begin{center} \normalsize
+        Danilo Gaby Andersen Trindade - 06/82039
+        
+        Leandro Gaby Andersen Trindade - 04/87082
+        \end{center}
+    \vfill%
+
+    {\large Bras\'{\i}lia, 04 de Julho de 2009}\\
+ 
+\end{center}
+ 
+\end{titlepage}
+
+
+%\maketitle
+
+\tableofcontents
+%\listoffigures
+%\listoftables
+
+\newpage
+\section{Conceito}
+	Este jogo foi criado a partir de uma pergunta que passa pela cabeça de todos durante a matrícula da UnB. Muitas vezes temos varias turmas de uma matéria para escolher, cada uma com um professor diferente. Assim, todos temos uma dúvida: Qual professor é o melhor?
+	
+	Podemos tentar responder essa dúvida pegando opiniões de outros alunos, mas todas as opiniões são baseadas na preferência pessoal de cada um. Então, esse jogo responde essa pergunta da maneira mais objetiva que existe. O melhor professor será decidido por uma luta até a morte!
+	
+	Ganhador do CaComp's choice award, o primeiro jogo a possuir o selo Saad9001 de trashicidade, no CiC Fighter você controla os professores do Departamento de Ciência da Computação da UnB em lutas mortais e sangrentas um contra o outro. Que o melhor professor vença!
+
+\section{Escopo}
+\subsection{Plataformas}
+	Por ser baseado na linguagem Python, o jogo tende a ser Multi-Plataforma, mas será criado e testado utilizando Windows XP SP3.
+
+\subsection{Público Alvo}
+	Todos os alunos da UnB que tiverem alguma aula com professores da computação, assim como professores da UnB que os conhecem.
+
+\subsection{Jogadores}
+	O jogo é multi player para 2 jogadores.
+
+\subsection{Gênero}
+	Luta
+
+\subsection{Objetivo}
+	O jogo possui o objetivo de homenagear os professores da UnB e entreter os alunos.
+
+\section{Mecânica de Jogo}
+\subsection{Visão geral essencial}
+
+\subsubsection{Aspectos fundamentais}
+	Os jogadores irão primeiro escolher os seus lutadores na tela de menu. Uma vez escolhidos, uma tela de versus exibe as decisões e então a luta começa. Os jogadores utilizam seus botões para atacar, podendo utilziar socos, chutes e um ataque especial. Esses podem ainda ser durante um pulo, parado normalmente, ou abaixado, tendo assim uma combinação de 9 ataques diferentes. Um jogador pode esquivar do ataque saindo do caminho dele, pulando por cima, se movendo ou se abaixando, ou pode defender o ataque diminuindo o dano levado por ele.
+	
+	Os jogadores possuem cada um sua barra de energia, e os golpes diminuem ela, sendo o chute o golpe mais forte porém mais lento, soco de dano e velocidade médio, e especial sendo um ataque muito lento mas que lança um projétil, causando pouco dano. Um jogador perde se sua barra de energia acaba, e um jogador vence se ele consegue acabar toda a barra de energia do inimigo antes dele acabar a sua.
+
+\subsubsection{Diferenciais}
+	Este jogo utiliza os professores do CiC e uma temática de computação. De forma a se diferenciar de quaisquer outros jogos de luta existentes, principalmente ao ser jogado por alunos do departamento.
+
+\subsection{Contexto do Game}
+
+\subsubsection{História do game}
+	O jogo não possui história, apresentando diretamente uma luta até morte entre professores para decidir qual o melhor.
+
+\subsubsection{Eventos anteriores}
+	Não existem.
+
+\subsection{Objetos essenciais do game}
+\subsubsection{Personagens}
+\begin{itemize}
+	\item \textbf{Professores do CiC:} Os personagens do jogo serão os professores do CiC, sem haver diretamente um número certo deles. É possível se implementar novos professores a qualquer momento somente se criando uma pasta com o nome dele dentro da pasta Personagens, e colocando dentro os \textit{sprites} necessárias e sons.
+	
+\end{itemize}
+
+\subsubsection{Objetos}
+\begin{itemize}
+	\item \textbf{Barra de Energia:} Possui um nome sobre ela e marca a energia do personagem alvo. A cada golpe ela diminui em uma quantidade, e, quando some completamente, o jogador morre.
+	
+	\item \textbf{Projétil:} Os professores podem lançar projéteis diferenciados, dependendo de cada professor e que normalmente tem algo a ver com a personalidade deles. O projétil é criado no momento que um jogador clica no botão de utilizar ataque especial, e voa em linha reta a uma certa velocidade. Outro destes só pode ser jogado quando o anterior some, ou por acertar o jogador inimigo ou por sair da tela.
+	
+\end{itemize}
+
+\subsubsection{Estruturas}
+	\begin{itemize}
+		\item \textbf{Nomes:} Nomes dos personagens na luta. Ficam acima das respectivas barras de energia.
+		
+	\end{itemize}
+
+\subsection{Conflitos e solu\c cões}
+	O jogador deve matar o jogador oponente. Somente um pode sair vitorioso.
+	
+\subsection{Fluxo do Game}
+	O jogo escolhe fases aleatoriamente e não possui uma história ou fluxo retilíneo, caindo no âmbito de jogos rápidos de luta.
+
+\subsection{Controles}
+	Os jogadores utilizarão o teclado. Para voltar ao Menu, ou sair do jogo, basta apertar ESC. Na tela de seleção de personagens o jogador deve utilizar o botão de soco para selecionar seu personagem ou o de chute para deselecionar caso deseje escolher outro, e os botões de mover para mudar sua escolha. Na tela de versus, o jogador pode apertar qualquer botao de ataque para prosseguir à próxima tela. Abaixo estão os botões dos jogadores:
+	
+	\begin{itemize}
+	\item \textbf{Player 1:}
+		\begin{itemize}
+		\item \textbf{Mover para cima:} W
+		\item \textbf{Mover para baixo:} S
+		\item \textbf{Mover para esquerda:} A
+		\item \textbf{Mover para direita:} D
+		\item \textbf{Soco:} Y
+		\item \textbf{Chute:} U
+		\item \textbf{Especial:} I
+	
+		\end{itemize}
+		
+	\item \textbf{Player 2:}
+		\begin{itemize}
+		\item \textbf{Mover para cima:} Seta para cima
+		\item \textbf{Mover para baixo:} Seta para baixo
+		\item \textbf{Mover para esquerda:} Seta para esquerda
+		\item \textbf{Mover para direita:} Seta para direita
+		\item \textbf{Soco:} Num7
+		\item \textbf{Chute:} Num8
+		\item \textbf{Especial:} Num9
+	
+		\end{itemize}
+	
+	\end{itemize}
+	
+	
+\nocite{*}
+\bibliographystyle{apalike}
+\bibliography{bibliografia}
+
+\end{document}
