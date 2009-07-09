@@ -602,7 +602,7 @@ class Barra(object):
     def __init__(self,(x,y),width,height,jogador,invertida = False):
         """ Inicializa barra de contagem """
         self.nome = jogador.nome
-        self.font = pygame.font.Font(None, (int)(0.04*pygame.display.get_surface().get_width()))
+        self.font = pygame.font.Font("freesansbold.ttf",int(0.04*pygame.display.get_surface().get_height()))
         self.x = x
         self.y = y
         self.width = width
@@ -688,7 +688,7 @@ class Vitoria(object):
         self.movimentar = False
         self.timer = 1.
         self.retornando = False
-        self.font = pygame.font.Font(None, (int)(0.04*self.width))
+        self.font = pygame.font.Font("freesansbold.ttf", int(0.036*self.height))
 
     def update(self,dtempo):
         """ Movimenta o retrato e a frase em direcoes contrarias e aceleradas """
@@ -757,7 +757,7 @@ class Chuvadebits(object):
                            Rect( (564/800.)*self.width , (211/600.)*self.height , (22/800.)*self.width, (16/600.)*self.height)] # Ponto da !
         self.bits = []
         self.letras = []
-        self.font = pygame.font.Font(None, (int)(0.03*self.width))
+        self.font = pygame.font.Font("freesansbold.ttf", int(0.03*self.height))
         self.primeiraiteracao = True
         self.tempo = 0
         self.tocoufight = False

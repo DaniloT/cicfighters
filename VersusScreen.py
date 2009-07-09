@@ -18,9 +18,6 @@ class VersusScreen():
         self.deslocax = 0.
         self.parou = False
         self.primeiraiteracao = True
-        
-        #Som de introducao da tela de versus        
-        pygame.mixer.Sound(os.path.join('.','sons',"vs.wav")).play()
 
         #Carrega fundo da tela de versus
         self.fundo = Sprite(os.path.join('.','Imagens', "vsback.png"),(0,0),False,(self.width,self.height))
@@ -37,6 +34,9 @@ class VersusScreen():
         if self.primeiraiteracao:
             self.primeiraiteracao = False
             dtempo = 0
+            #Som de introducao da tela de versus        
+            pygame.mixer.Sound(os.path.join('.','sons',"vs.wav")).play()
+            
         #Cuida da animacao da tela de versus
         if not self.parou:
             self.deslocax = self.deslocax + (self.width*0.25)*dtempo
