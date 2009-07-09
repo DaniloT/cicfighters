@@ -13,7 +13,7 @@ class GameMenu(object):
         """Inicializa elementos do menu"""
         self.width = pygame.display.get_surface().get_width()
         self.height = pygame.display.get_surface().get_height()
-        pygame.mixer.Sound(os.path.join('.','sons',"entradamenu.wav")).play()
+        pygame.mixer.Sound(os.path.join('.','Sons',"entradamenu.wav")).play()
         pygame.mixer.music.load(os.path.join('.','Musicas','menu.mp3'))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
@@ -212,7 +212,7 @@ class GameMenu(object):
 class Retrato(object):
     """ Retrato de personagem na tela de selecao """
     def __init__(self,nome,(x,y)):
-        self.sprite = Sprite(os.path.join('.','Personagens',nome,'Retrato.PNG'),(90,120),1.5)
+        self.sprite = Sprite(os.path.join('.','Personagens',nome,'retrato.png'),(90,120),1.5)
         self.x = x
         self.y = y
         self.nome = nome
@@ -223,9 +223,9 @@ class Retrato(object):
         self.escolhidop2 = False
         self.cor = 155
         self.incrcor = 5
-        self.somseleciona = pygame.mixer.Sound(os.path.join('.','sons',"seleciona.wav"))
+        self.somseleciona = pygame.mixer.Sound(os.path.join('.','Sons',"seleciona.wav"))
         self.somescolhejogador = pygame.mixer.Sound(os.path.join('.',"Personagens",self.nome,"escolhe.wav"))
-        self.somescolhe = pygame.mixer.Sound(os.path.join('.',"sons","escolhe.wav"))
+        self.somescolhe = pygame.mixer.Sound(os.path.join('.',"Sons","escolhe.wav"))
 
     def update(self,dtempo):
         """ Atualiza retrato e caixa de selecao """

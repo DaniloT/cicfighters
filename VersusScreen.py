@@ -35,7 +35,7 @@ class VersusScreen():
             self.primeiraiteracao = False
             dtempo = 0
             #Som de introducao da tela de versus        
-            pygame.mixer.Sound(os.path.join('.','sons',"vs.wav")).play()
+            pygame.mixer.Sound(os.path.join('.','Sons',"vs.wav")).play()
             
         #Cuida da animacao da tela de versus
         if not self.parou:

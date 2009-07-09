@@ -184,23 +184,23 @@ class Player(object):
         self.x = x
         self.y = y
         self.yinicial = y
-        self.projetil = Projetil(os.path.join('.','Personagens',self.nome,'projetil.PNG'))
-        self.animacoes = {"parado":Sprite(os.path.join('.','Personagens',self.nome,'parado.PNG'),(305,320),8),
-                          "andando":Sprite(os.path.join('.','Personagens',self.nome,'andando.PNG'),(305,320),8),
-                          "pulando":Sprite(os.path.join('.','Personagens',self.nome,'pulando.PNG'),(305,320),8),
-                          "abaixado":Sprite(os.path.join('.','Personagens',self.nome,'abaixado.PNG'),(305,320),8),
-                          "socando":Sprite(os.path.join('.','Personagens',self.nome,'socando.PNG'),(305,320),15),
-                          "socando-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'socando-abaixado.PNG'),(305,320),10),
-                          "socando-pulando":Sprite(os.path.join('.','Personagens',self.nome,'socando-pulando.PNG'),(305,320),8),
-                          "chutando":Sprite(os.path.join('.','Personagens',self.nome,'chutando.PNG'),(305,320),8),
-                          "chutando-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'chutando-abaixado.PNG'),(305,320),8),
-                          "chutando-pulando":Sprite(os.path.join('.','Personagens',self.nome,'chutando-pulando.PNG'),(305,320),8),
-                          "golpeado":Sprite(os.path.join('.','Personagens',self.nome,'golpeado.PNG'),(305,320),8),
-                          "defesa":Sprite(os.path.join('.','Personagens',self.nome,'defesa.PNG'),(305,320),8),
-                          "defesa-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'defesa-abaixado.PNG'),(305,320),8),
-                          "morrendo":Sprite(os.path.join('.','Personagens',self.nome,'morrendo.PNG'),(320,320),5),
-                          "especial":Sprite(os.path.join('.','Personagens',self.nome,'especial.PNG'),(305,320),8),
-                          "especial-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'especial-abaixado.PNG'),(305,320),8)}
+        self.projetil = Projetil(os.path.join('.','Personagens',self.nome,'projetil.png'))
+        self.animacoes = {"parado":Sprite(os.path.join('.','Personagens',self.nome,'parado.png'),(305,320),8),
+                          "andando":Sprite(os.path.join('.','Personagens',self.nome,'andando.png'),(305,320),8),
+                          "pulando":Sprite(os.path.join('.','Personagens',self.nome,'pulando.png'),(305,320),8),
+                          "abaixado":Sprite(os.path.join('.','Personagens',self.nome,'abaixado.png'),(305,320),8),
+                          "socando":Sprite(os.path.join('.','Personagens',self.nome,'socando.png'),(305,320),15),
+                          "socando-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'socando-abaixado.png'),(305,320),10),
+                          "socando-pulando":Sprite(os.path.join('.','Personagens',self.nome,'socando-pulando.png'),(305,320),8),
+                          "chutando":Sprite(os.path.join('.','Personagens',self.nome,'chutando.png'),(305,320),8),
+                          "chutando-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'chutando-abaixado.png'),(305,320),8),
+                          "chutando-pulando":Sprite(os.path.join('.','Personagens',self.nome,'chutando-pulando.png'),(305,320),8),
+                          "golpeado":Sprite(os.path.join('.','Personagens',self.nome,'golpeado.png'),(305,320),8),
+                          "defesa":Sprite(os.path.join('.','Personagens',self.nome,'defesa.png'),(305,320),8),
+                          "defesa-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'defesa-abaixado.png'),(305,320),8),
+                          "morrendo":Sprite(os.path.join('.','Personagens',self.nome,'morrendo.png'),(320,320),5),
+                          "especial":Sprite(os.path.join('.','Personagens',self.nome,'especial.png'),(305,320),8),
+                          "especial-abaixado":Sprite(os.path.join('.','Personagens',self.nome,'especial-abaixado.png'),(305,320),8)}
 
         listasomsoco = [i for i in os.listdir(os.path.join('.','Personagens',nome)) if i[:4] == 'soco' and i[-4:] == '.wav']
         self.somsoco = [pygame.mixer.Sound(os.path.join('.','Personagens',nome,i)) for i in listasomsoco]
@@ -674,7 +674,10 @@ class Vitoria(object):
         arqfrases = open(os.path.join('.','Personagens', nome, "frases.txt"))
         frases = arqfrases.readlines()
         arqfrases.close()
-        self.frase = "  "+random.choice(frases)[:-1]+"  "
+        if sys.platform[:-2] == "win":
+            self.frase = "  "+random.choice(frases)[:-1]+"  "
+        else:
+            self.frase = "  "+random.choice(frases)[:-2]+"  "
         self.player = player
         self.y = (self.height * 0.41)
         #Player 1 vai da esquerda para a direita
@@ -787,8 +790,8 @@ class Chuvadebits(object):
             if not self.tocoufight:
                 self.tocoufight = True
                 pygame.mixer.music.set_volume(0.3)
-                pygame.mixer.Sound(os.path.join('.','sons',"fight.wav")).play()
-                pygame.mixer.Sound(os.path.join('.','sons',"estourofight.wav")).play()
+                pygame.mixer.Sound(os.path.join('.','Sons',"fight.wav")).play()
+                pygame.mixer.Sound(os.path.join('.','Sons',"estourofight.wav")).play()
                 
             for i in self.bits:
                 if i['parado']:
