@@ -17,7 +17,7 @@ class GameMenu(object):
         pygame.mixer.music.load(os.path.join('.','Musicas','menu.mp3'))
         pygame.mixer.music.set_volume(0.3)
         pygame.mixer.music.play(-1)
-        self.font = pygame.font.Font("freesansbold.ttf", int(self.height*0.08))
+        self.font = pygame.font.Font(os.path.join('.','Imagens',"fonte.ttf"), int(self.height*0.08))
         retratos = []
         linha = []
         pos = [self.width*0.2375,self.height*0.45]
@@ -216,7 +216,7 @@ class Retrato(object):
         self.x = x
         self.y = y
         self.nome = nome
-        self.font = pygame.font.Font("freesansbold.ttf", 20)
+        self.font = pygame.font.Font(os.path.join('.','Imagens',"fonte.ttf"), 20)
         self.selecionadop1 = False
         self.selecionadop2 = False
         self.escolhidop1 = False
