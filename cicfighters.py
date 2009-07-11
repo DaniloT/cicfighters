@@ -2,23 +2,11 @@
 
 #/************************************************************/
 #/*                                                          */
-#/*    Universidade de Brasilia                              */
-#/*    Instituto de Exatas                                   */
-#/*    Departamento de Ciencias da Computacao                */
-#/*                                                          */
-#/*    Construcao de Pecas Multimidia                        */
-#/*    Professora Carla Castanho                             */
-#/*                                                          */
-#/*    Alunos: Leandro Gaby Andersen Trindade                */
-#/*            Danilo Gaby Andersen Trindade                 */
-#/*    Matriculas: 04/87082                                  */
-#/*                06/82039                                  */
-#/*                                                          */
-#/*    Descricao:                                            */
+#/*    CIC Fighters:                                         */
 #/*      Jogo de luta com os professores do CIC =)           */
 #/*                                                          */
 #/*    Uso: python cicfighter.py                             */
-#/*    Ou para modo em janela: python cicfighter.py -w       */
+#/*    Ou para modo em tela cheia: python cicfighter.py -f   */
 #/*                                                          */
 #/*    Controles:                                            */
 #/*    P1                                                    */
